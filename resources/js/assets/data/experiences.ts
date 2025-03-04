@@ -1,0 +1,63 @@
+import { Experience, EXPERIENCE_TYPE } from '@/types/experience';
+
+export const experiences: Experience[] = [
+    {
+        id: 1,
+        name: 'Engineering degree',
+        location: 'CNAM',
+        description: 'Computer science engineer degree: Valedictorian',
+        type: EXPERIENCE_TYPE.SCHOOL,
+        fromDate: new Date(2015, 8).toISOString(),
+        toDate: new Date(2018, 7).toISOString(),
+    },
+    {
+        id: 2,
+        name: 'Advanced diploma in IT',
+        location: 'IUT Robert Schuman',
+        type: EXPERIENCE_TYPE.SCHOOL,
+        fromDate: new Date(2013, 8).toISOString(),
+        toDate: new Date(2015, 7).toISOString(),
+    },
+    {
+        id: 3,
+        name: 'Senior Sofware Engineer',
+        location: 'Big Picture Medical, Sydney, Australia',
+        description: `Web applications development using Angular 8, Unit tests,
+         end-to-end tests writing, code review on both front and back-end, Dockerfile writing,
+         Angular libraries development, CI pipeline set up…`,
+        type: EXPERIENCE_TYPE.WORK,
+        fromDate: new Date(2018, 8).toISOString(),
+        toDate: new Date(2019, 7).toISOString(),
+    },
+    {
+        id: 4,
+        name: 'Software Engineer',
+        location: 'IHU, Strasbourg, France',
+        description: `Web applications development using Angular 8, Unit tests,
+         end-to-end tests writing, code review on both front and back-end, Dockerfile writing,
+         Angular libraries development, CI pipeline set up…`,
+        type: EXPERIENCE_TYPE.WORK,
+        fromDate: new Date(2018, 8).toISOString(),
+        toDate: new Date(2019, 7).toISOString(),
+    },
+    {
+        id: 5,
+        name: 'R&D Developer Apprentice',
+        location: 'IRCAD, Strasbourg, France',
+        description: `Full-stack web development using AngularJS, Angular and Node.js/NestJS,
+         unit tests writing, member of a Scrum development team… `,
+        type: EXPERIENCE_TYPE.WORK,
+        fromDate: new Date(2015, 8).toISOString(),
+        toDate: new Date(2018, 7).toISOString(),
+    },
+    {
+        id: 6,
+        name: 'Application Developer Intern',
+        location: 'ACCES SAVOIRS, Québec city, Canada',
+        description:
+            'Applications development (mainly C# .NET) for non-profit organizations.',
+        type: EXPERIENCE_TYPE.WORK,
+        fromDate: new Date(2015, 3).toISOString(),
+        toDate: new Date(2015, 6).toISOString(),
+    },
+];
