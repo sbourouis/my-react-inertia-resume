@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  app:
+    container_name: resume_app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: app-dev
+      args:
+        GIT_COMMIT_HASH: 'local'
+    restart: 'no'
+    volumes:
+      - ./:/app:delegated
+    ports:
+      - "8180:80"
+
+  web_app:
+    container_name: resume_web_app
+    image: node:18.18.1-alpine
+    working_dir: /app
+    entrypoint: /app/docker/node/entrypoints/dev.sh
+    ports:
+      - "5173:5173"
+    depends_on:
+        - app
+    volumes:
+        - ./:/app:delegated
