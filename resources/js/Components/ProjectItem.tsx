@@ -1,7 +1,7 @@
 import Card from '@/Components/Card';
 import CardContent from '@/Components/CardContent';
 import CardIcon from '@/Components/CardIcon';
-import { Experience, EXPERIENCE_TYPE } from '@/types/experience';
+import { Project, PROJECT_TYPE } from '@/types/project';
 
 const formatDate = (date: string) =>
     new Date(date).toLocaleString('en-GB', {
@@ -9,15 +9,11 @@ const formatDate = (date: string) =>
         year: 'numeric',
     });
 
-export default function ExperienceItem({
-    experience,
-}: {
-    experience: Experience;
-}) {
+export default function ProjectItem({ project }: { project: Project }) {
     return (
         <Card>
             <CardIcon>
-                {experience.type === EXPERIENCE_TYPE.SCHOOL ? (
+                {project.type === PROJECT_TYPE.ACADEMIC ? (
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="size-5 sm:size-6"
@@ -48,17 +44,9 @@ export default function ExperienceItem({
             </CardIcon>
 
             <CardContent
-                title={experience.name}
-                description={experience.description}
-            >
-                <p>
-                    {experience.location} <br />
-                    <i>
-                        {formatDate(experience.fromDate)} -{' '}
-                        {formatDate(experience.toDate)}
-                    </i>
-                </p>
-            </CardContent>
+                title={project.name}
+                description={project.description}
+            ></CardContent>
         </Card>
     );
 }
